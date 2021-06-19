@@ -1,2 +1,2 @@
-# Bank-Project
+# Bank-Application
 A Bank System Basic Project

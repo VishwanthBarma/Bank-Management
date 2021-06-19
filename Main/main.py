@@ -27,3 +27,4 @@ c2.add_transaction(47)
 print(c2.get_transactions())
 print(c2.get_name())
 print(c1.get_name())
+

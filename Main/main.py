@@ -116,16 +116,16 @@ class Bank:
         return False
 
 
-bank1 = Bank("National Bank")
-bank1.add_branch("something")
-bank1.add_customer("something", "Vishwanth", 200)
-bank1.add_customer("something", "hima", 280)
-bank1.add_customer("something", "rishi", 190)
-bank1.add_customer_transaction("something", "Vishwanth", 789)
-bank1.add_customer_transaction("something", "rishi", 689)
-
-bank1.list_branch_customers("something", True)
-bank1.list_branch_customers("something", False)
+# bank1 = Bank("National Bank")
+# bank1.add_branch("something")
+# bank1.add_customer("something", "Vishwanth", 200)
+# bank1.add_customer("something", "hima", 280)
+# bank1.add_customer("something", "rishi", 190)
+# bank1.add_customer_transaction("something", "Vishwanth", 789)
+# bank1.add_customer_transaction("something", "rishi", 689)
+#
+# bank1.list_branch_customers("something", True)
+# bank1.list_branch_customers("something", False)
 
 # Bank bank = new Bank("National Australia Bank");
 # bank.addBranch("Adelaide");

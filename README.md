@@ -1,5 +1,6 @@
 # Bank-Application
-A Bank Application System Project using Python
+A Bank Application System Project using Python.
+
 -> Intermediate Level.  
 
 As we all know how the bank system works in real life,  

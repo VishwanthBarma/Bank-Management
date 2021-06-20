@@ -3,7 +3,7 @@ A Bank Application System Project using Python
 
 As we all know how the bank system works in real life,  
 everything from creating accounts to transactions with  
-with mobiles. After a massive development in the software
+with mobiles. After a massive development in the software. 
 industry of technology, visiting bank for transactions is 
 reduced.
 In the same way as a beginners, we creating a bank application

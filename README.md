@@ -1,5 +1,5 @@
-# Bank-Application
-A Bank Application System Project using Python.
+# Bank-Management
+A Bank Management System Project using Python.
 
 -> Intermediate Level.  
 

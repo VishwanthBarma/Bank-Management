@@ -114,39 +114,3 @@ class Bank:
                 branch.list_customers()
             return True
         return False
-
-
-# bank1 = Bank("National Bank")
-# bank1.add_branch("something")
-# bank1.add_customer("something", "Vishwanth", 200)
-# bank1.add_customer("something", "hima", 280)
-# bank1.add_customer("something", "rishi", 190)
-# bank1.add_customer_transaction("something", "Vishwanth", 789)
-# bank1.add_customer_transaction("something", "rishi", 689)
-#
-# bank1.list_branch_customers("something", True)
-# bank1.list_branch_customers("something", False)
-
-
-
-# branch1 = Branch("SBI")
-# branch1.new_customer("Vishwanth", 200)
-# branch1.new_customer("Vishwanth", 302)
-# branch1.new_customer("Hima", 23)
-# branch1.list_customers()
-# branch1.add_customer_transaction("Vishwanth", 9999)
-# branch1.list_customers()
-
-
-#
-# c1 = Customer("Vishwanth", 20)
-# print(c1.get_transactions())
-# print(c1.get_name())
-# c1.add_transaction(30)
-# print(c1.get_transactions())
-# c2 = Customer("Hima", 340)
-# c2.add_transaction(47)
-# print(c2.get_transactions())
-# print(c2.get_name())
-# print(c1.get_name())
-

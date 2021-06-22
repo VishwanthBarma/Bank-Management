@@ -114,3 +114,8 @@ class Bank:
                 branch.list_customers()
             return True
         return False
+
+    # Creating a function in bank class to print all the customers of bank with not respect to branch of the bank
+    # No branch is to specified in order to print the details of the customers
+    # ****** Creating a function to print all details of customers without specifing the branch name
+

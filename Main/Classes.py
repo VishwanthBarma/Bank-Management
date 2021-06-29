@@ -115,7 +115,25 @@ class Bank:
             return True
         return False
 
-    # Creating a function in bank class to print all the customers of bank with not respect to branch of the bank
+    def bank_details(self):
+        print("*************************************************")
+        print("|     *********{}*********     |".format(self.name))
+        print("*************************************************")
+        for branch in self.branches:
+            i = 1
+            print("----------------------------------------------")
+            print("       *** \t\t{}\t\t ***       ".format(branch.name))
+            print("----------------------------------------------")
+            print("   \t |     Customer Name \t | Account Balance")
+            for customer in branch.customers:
+                print("{: ^3}\t |{: ^23s}| {}".format(i, customer.name, customer.transactions))
+                i = i+1
+        print()
+
+
+# print('{:#^24s},'.format("MyString"))
+
+# Creating a function in bank class to print all the customers of bank with not respect to branch of the bank
     # No branch is to specified in order to print the details of the customers
     # ****** Creating a function to print all details of customers without specifing the branch name
 

@@ -22,3 +22,33 @@ class Account:
             self.accounts.append(new_acc)
         else:
             print("Account already exists")
+
+    def remove_account(self, username):
+        acc = self.find_account(username)
+        if not acc:
+            print(f"No account exists with username - {username}")
+            return False
+        else:
+            self.accounts.remove(acc)
+            print("Account Deleted Successfully")
+            return True
+
+    def update_pass(self, username, passwo):
+        acc = self.find_account(username)
+        if not acc:
+            print("Account Not Found")
+            return False
+        else:
+            acc.password = passwo
+            return True
+
+    def update_num(self, username, num):
+        acc = self.find_account(username)
+        if not acc:
+            print("Account Not Found")
+            return False
+        else:
+            acc.number = num
+            return True
+
+

@@ -1,12 +1,22 @@
 # Account Class
-class Account:
-    accounts = []
+total_account = []
 
+
+class Acc:
     def __init__(self, username, password, number):
         self.username = username
         self.password = password
         self.number = number
-        self.accounts.append(Account(username, password, number))
+
+
+class Accounts(Acc):
+    accounts = []
+
+    def __init__(self, username, password, number):
+        super().__init__(username, password, number)
+        new_acc = Acc(username, password, number)
+        self.accounts.append(Acc)
+        total_account.append(new_acc)
 
     def find_account(self, username):
         for acc in self.accounts:
@@ -18,7 +28,7 @@ class Account:
 
     def create_account(self, username, password, number):
         if not self.find_account(username):
-            new_acc = Account(username, password, number)
+            new_acc = Acc(username, password, number)
             self.accounts.append(new_acc)
         else:
             print("Account already exists")
@@ -52,3 +62,5 @@ class Account:
             return True
 
 
+# a1 = Accounts("ajf", "aldbbia", 35619)
+# print(a1.number)

@@ -15,6 +15,12 @@ class Customer:
     def get_name(self):
         return self.name
 
+    def get_amount(self):
+        amount = 0
+        for i in self.transactions:
+            amount += i
+        return amount
+
     def get_transactions(self):
         return self.transactions
 

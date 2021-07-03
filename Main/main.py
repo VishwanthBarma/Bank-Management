@@ -11,6 +11,7 @@ while start:
         continue
     print()
     open_customer = display_options2()
+    # Should be Checked  -> display_options2()
     if open_customer == -1:
         continue
 

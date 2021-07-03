@@ -44,6 +44,7 @@ def display_options2():
 
     if key == "no":
         print("To create a bank account, enter the details")
+        ### ------- TODO
         person_name = input("Enter Your Name : ")
         bank_name = input("Enter Name of the Bank : ")
         branch_name = input("Enter Name of the Branch : ")
@@ -141,6 +142,7 @@ def find_acc(un):
             return None
 
 
+# Handling the
 def display_options3(open_login, customer):
     print("----What do you want to Know----")
     print("""1. -> Account
@@ -148,8 +150,11 @@ def display_options3(open_login, customer):
 3. -> Visiting Bank 
 4. -> Exit
     """)
+
     option = int(input("Select your option : "))
+
     if option == 1:
+        ###  _____________ TODO
         print("""1> Bank Account Balance
 2> Withdraw Amount
 3> Deposit Amount
@@ -177,6 +182,7 @@ def display_options3(open_login, customer):
             customer.add_transaction(amo)
             print("Deposit Completed Successfully")
         elif option2 == 4:
+            ## ________ TODO
             print("----What do you want to change----")
             print("""1. Change Username of Account
 2. Change Password
@@ -196,6 +202,7 @@ def display_options3(open_login, customer):
                     if password_checker(n_pa):
                         open_login.password = n_pa
                         print("Successfully Changed The Password")
+                        break
                     else:
                         print("Entered Invalid Password")
                         continue
@@ -205,6 +212,7 @@ def display_options3(open_login, customer):
                 print("Successfully Changed Phone Number")
 
     elif option == 2:
+        ##### _______ TODO
         print("----What details do you want----")
         print("""1. List the Customers in Bank
 2. List The Customers in Branch with Transactions

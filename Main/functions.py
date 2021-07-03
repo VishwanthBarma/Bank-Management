@@ -38,7 +38,10 @@ def password_checker(password):
 
 
 def display_options2():
-    key = input("Do you have a Bank Account(yes/no)").lower()
+    key = input("Do you have a Bank Account(yes/no) / 0 to exit : ").lower()
+    if key == '0':
+        return -1
+
     if key == "no":
         print("To create a bank account, enter the details")
         person_name = input("Enter Your Name : ")
@@ -63,9 +66,10 @@ def display_options2():
 
 
 def display_options1():
-    print("Enter Option Respectively")
+    print("----Enter Option Respectively----")
     print("1. Login To Account")
     print("2. SignUp New Account")
+    print("3. Exit")
     option = int(input("Select the Function Option : "))
     if option == 1:
         acc = login_acc()
@@ -73,36 +77,44 @@ def display_options1():
     elif option == 2:
         acc = sign_up_acc()
         return acc
+    elif option == 3:
+        return -1
     else:
         print("Invalid Option Selected")
+        return 0
 
 
 def login_acc():
     user_name = input("Enter the username : ")
-    pass_word = input("Enter the password : ")
-    acc = find_acc(user_name)
-    if acc is None:
-        print("Account Does Not Exists")
-        return False
-    elif pass_word != acc.pasaword:
-        print("Incorrect Password")
-        check = input("Forgotten Password, need help?(yes/no) : ").lower()
-        if check is "yes":
-            name = input("Enter your Username : ")
-            the_acc = find_acc(name)
-            if the_acc is not None:
-                the_pass = the_acc.password
-                the_num = the_acc.number
-                the_body = "The Password of " + name + "is " + the_pass
-                send_message(the_body)
-                print(f"The Password of the User - {name} has sent to the your manager of the bank")
-            else:
-                print(f"Actually, No account exists with username {name}")
-        else:
-            print("Try Again")
+    while True:
+        pass_word = input("Enter the password : ")
+        acc = find_acc(user_name)
+        if acc is None:
+            print("Account Does Not Exists")
+            return 0
+        elif pass_word != acc.password:
+            print("Incorrect Password")
 
-    else:
-        return acc
+            check = input("Forgotten Password, need help?(yes/no) : ").lower()
+            if check == "yes":
+                name = input("Enter your Username : ")
+                the_acc = find_acc(name)
+                if the_acc is not None:
+                    the_pass = the_acc.password
+                    the_num = the_acc.number
+                    the_body = "The Password of " + name + "is " + the_pass
+                    send_message(the_body)
+                    print(f"The Password of the User - {name} has sent to the your manager of the bank")
+                    break
+                else:
+                    print(f"Actually, No account exists with username {name}")
+                    continue
+            else:
+                print("Try Again")
+                continue
+
+        else:
+            return acc
 
 
 def sign_up_acc():
@@ -130,10 +142,11 @@ def find_acc(un):
 
 
 def display_options3(open_login, customer):
-    print("--What do you want to Know--")
+    print("----What do you want to Know----")
     print("""1. -> Account
 2. -> Bank Details
 3. -> Visiting Bank 
+4. -> Exit
     """)
     option = int(input("Select your option : "))
     if option == 1:
@@ -164,7 +177,7 @@ def display_options3(open_login, customer):
             customer.add_transaction(amo)
             print("Deposit Completed Successfully")
         elif option2 == 4:
-            print("What do you want ot change")
+            print("----What do you want to change----")
             print("""1. Change Username of Account
 2. Change Password
 3. Change Phone Number""")
@@ -192,7 +205,7 @@ def display_options3(open_login, customer):
                 print("Successfully Changed Phone Number")
 
     elif option == 2:
-        print("What details do you want")
+        print("----What details do you want----")
         print("""1. List the Customers in Bank
 2. List The Customers in Branch with Transactions
 3. List Entire Full Details of the Banks""")
@@ -223,6 +236,9 @@ def display_options3(open_login, customer):
     elif option == 3:
         pass
         # slot_booking() TODO
+    elif option == 4:
+        return -1
+
 
 
 

@@ -1,5 +1,13 @@
 from functions import *
 from LoadData import banks_list
+from Data import dumping_data
+from LoadData import load_dumped_data
+
+# Dumping the data at the very first
+dumping_data()
+
+# Loading Dumped Data
+load_dumped_data()
 
 input("Press Enter To Start The Bank Management System")
 start = True
@@ -15,12 +23,17 @@ while start:
     if open_customer == -1:
         continue
 
-    start2 = True
-    while start2:
+    while True:
         flag = display_options3(open_login, open_customer)
         if flag == -1:
             break
         print()
-print("Exited The Program Successfully")
+    continue
+
+print()
+print("********************************")
+print("**SUCCESSFULLY PROGRAM EXCITED**")
+print("********************************")
+
 
 

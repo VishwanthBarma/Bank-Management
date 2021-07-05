@@ -30,7 +30,7 @@ while True:  # Main Starting Options
         continue
 
     while True:
-        flag = display_functions3(opt2, opt1)
+        flag = display_functions3(list(opt2), list(opt1))
         if flag == -1:
             break
         print()

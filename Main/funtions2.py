@@ -372,32 +372,34 @@ def display_functions3(data, data_acc):
                     valid = False
                     while not valid:
                         print()
-                        amo = int(input("Enter Amount to Withdraw from Main Balance : "))
+                        amo = int(input("Enter Valid Amount to Withdraw from Main Balance : "))
                         if 0 <= amo <= data[3]:
-                            new_amo = data[3] - amo
+                            data[3] -= amo
+                            print(f"New Amount {data[3]}")
                             with connection:
                                 cursor.execute("UPDATE bankaccounts SET amount=:amount WHERE"
-                                               " bankname=:bankname AND baranchname=:branchname AND"
-                                               " personname=:personname", {'amount': new_amo, 'bankname': data[0],
+                                               " bankname=:bankname AND branchname=:branchname AND"
+                                               " personname=:personname", {'amount': data[3], 'bankname': data[0],
                                                                            'branchname': data[1], 'personname': data[2]})
                                 connection.commit()
 
-                            print("Withdrawal Successful")
+                            print("**Withdrawal Successful**")
                             valid = True
                             # customer.add_transaction(-1 * amo)
                         else:
-                            print("Withdrawal Unsuccessful")
+                            print("**Withdrawal Unsuccessful**")
+                            print(f"Your Account Balance is - {data[3]}")
                             continue
                 elif option2 == 3:
                     print()
                     amo = int(input("Enter Amount to Deposit : "))
                     # customer.add_transaction(amo)
-                    new_amo = data[3] + amo
+                    data[3] += amo
 
                     with connection:
                         cursor.execute("UPDATE bankaccounts SET amount=:amount WHERE"
-                                       " bankname=:bankname AND baranchname=:branchname AND"
-                                       " personname=:personname", {'amount': new_amo, 'bankname': data[0],
+                                       " bankname=:bankname AND branchname=:branchname AND"
+                                       " personname=:personname", {'amount': data[3], 'bankname': data[0],
                                                                    'branchname': data[1], 'personname': data[2]})
                         connection.commit()
 

@@ -23,6 +23,8 @@ while True:  # Main Starting Options
         elif opt2 == 0:
             continue
         # Option 2 is data
+        else:
+            break
 
     if a == 1:
         continue

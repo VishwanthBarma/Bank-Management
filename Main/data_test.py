@@ -135,6 +135,6 @@ cursor.execute("SELECT * FROM accounts")
 print("Accounts")
 print(cursor.fetchall())
 
-connection.commit()
+# connection.commit()
 
 connection.close()

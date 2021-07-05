@@ -146,7 +146,7 @@ def login_account():
                             the_body = "The Password of Username : " + the_name + "is " + the_pass
                             send_message(the_body)
                             print(f"The User - {the_name},"
-                                  f" - your recovery password hase been sent to your bank ")
+                                  f" - your recovery password hase been sent to your bank volunteer")
                             break
 
                         # else:

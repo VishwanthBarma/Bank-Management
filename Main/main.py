@@ -68,7 +68,7 @@ while True:  # Main Starting Options
 
 print()
 print("********************************")
-print("**SUCCESSFULLY PROGRAM EXCITED**")
+print("**SUCCESSFULLY PROGRAM EXITED**")
 print("********************************")
 
 

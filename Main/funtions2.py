@@ -2,6 +2,7 @@
 import sqlite3
 from Send_sms import send_message
 from functions import strong_pass_cond, password_checker
+from SlotBooking import main_booking
 
 # Data-Base connection and cursor
 connection = sqlite3.connect('data_base.db')
@@ -262,7 +263,7 @@ def display_functions2():
 
             return data
 
-    else:
+    elif key == "yes":
 
         while True:
             print()
@@ -337,6 +338,10 @@ def display_functions2():
             return 0
         else:
             return data
+
+    else:
+        print("Entered Invalid Option - Try Again")
+        return 0
 
 
 def display_functions3(data, data_acc):
@@ -481,7 +486,7 @@ def display_functions3(data, data_acc):
                             banks_avail()
                             try:
                                 print()
-                                choice = int(input("Select The Bank to create the account in that bank : "))
+                                choice = int(input("Select The Bank to list the customers in that bank : "))
                                 if choice == 1:
                                     bank_name = "sbi"
                                 elif choice == 2:
@@ -597,8 +602,28 @@ def display_functions3(data, data_acc):
             continue
 
         elif option == 3:
-            pass
-            # slot_booking() TODO
+            print()
+            while True:
+                print("-->[3] Visiting Bank :- ")
+                print("    1> Slot Booking")
+                print("    2> Exit")
+                # while True:
+                try:
+                    print()
+                    slot_opt = int(input("Enter Valid Option : "))
+                    if slot_opt == 1:
+                        main_booking()
+                        continue
+                    elif slot_opt == 2:
+                        break
+                    else:
+                        print("Invalid Option Entered")
+                        print("Try Again")
+                        continue
+                except ValueError:
+                    print("Invalid Syntax - Try Again")
+                # pass
+                # slot_booking() TODO
 
         elif option == 4:
             return -1

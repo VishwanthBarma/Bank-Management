@@ -3,7 +3,6 @@ from Account import *
 from Classes import *
 from Send_sms import send_message
 
-
 ########################
 #      Functions       #
 ########################
@@ -372,6 +371,7 @@ def display_options3(open_login, customer):
         elif option == 3:
             pass
             # slot_booking() TODO
+
         elif option == 4:
             return -1
 
